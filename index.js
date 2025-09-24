@@ -14,11 +14,62 @@ dotenv.config();
 
 const app = express();
 
+// app.use(cors({
+//   origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+// }));
+
+
+// app.use(cors({
+//   origin: ['https://your-vercel-domain.vercel.app', 'http://localhost:5173'],
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+// }));
+
+
+
+
+// app.use(cors({
+//   origin: [
+//     'https://book-nest-319j9z8lm-akshitnannaware-gmailcoms-projects.vercel.app',
+//     'http://localhost:5173'
+//   ],
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   credentials: true
+// }));
+
+
+
+
+
+
+ 
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://book-nest-2ok6zknab-akshitnannaware-gmailcoms-projects.vercel.app"
+];
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
 }));
+
+
+
+
+
+
 app.use(express.json());
 app.use('/uploads', express.static('uploads')); // Serve image files
 
