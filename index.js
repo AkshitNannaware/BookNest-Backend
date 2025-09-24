@@ -47,22 +47,38 @@ const app = express();
 
  
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://book-nest-2ok6zknab-akshitnannaware-gmailcoms-projects.vercel.app"
-];
+// const allowedOrigins = [
+//   "http://localhost:5173",
+//   "https://book-nest-2ok6zknab-akshitnannaware-gmailcoms-projects.vercel.app"
+// ];
+
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   allowedHeaders: ["Content-Type", "Authorization"],
+//   credentials: true
+// }));
+
+
+
+
+
+
+
 
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
+  origin: [
+    'https://book-nest-hko2e49mx-akshitnannaware-gmailcoms-projects.vercel.app', // Vercel frontend
+    'http://localhost:5173' // Local development
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 
