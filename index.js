@@ -14,68 +14,14 @@ dotenv.config();
 
 const app = express();
 
-// app.use(cors({
-//   origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//   allowedHeaders: ['Content-Type', 'Authorization'],
-// }));
-
-
-// app.use(cors({
-//   origin: ['https://your-vercel-domain.vercel.app', 'http://localhost:5173'],
-//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//   allowedHeaders: ['Content-Type', 'Authorization'],
-// }));
-
-
-
-
-// app.use(cors({
-//   origin: [
-//     'https://book-nest-319j9z8lm-akshitnannaware-gmailcoms-projects.vercel.app',
-//     'http://localhost:5173'
-//   ],
-//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//   allowedHeaders: ['Content-Type', 'Authorization'],
-//   credentials: true
-// }));
-
-
-
-
-
-
- 
-
-// const allowedOrigins = [
-//   "http://localhost:5173",
-//   "https://book-nest-2ok6zknab-akshitnannaware-gmailcoms-projects.vercel.app"
-// ];
-
-// app.use(cors({
-//   origin: function (origin, callback) {
-//     if (!origin || allowedOrigins.includes(origin)) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error("Not allowed by CORS"));
-//     }
-//   },
-//   methods: ["GET", "POST", "PUT", "DELETE"],
-//   allowedHeaders: ["Content-Type", "Authorization"],
-//   credentials: true
-// }));
-
-
-
-
 
 
 
 
 app.use(cors({
   origin: [
-    'https://book-nest-hko2e49mx-akshitnannaware-gmailcoms-projects.vercel.app', // Vercel frontend
-    // 'http://localhost:5173' // Local development
+    'https://book-nest-jpzghpvgt-akshitnannaware-gmailcoms-projects.vercel.app', // Vercel frontend
+    'http://localhost:5173' // Local development
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
