@@ -20,7 +20,7 @@ const app = express();
 
 app.use(cors({
   origin: [
-    'https://book-nest-pbidav0k4-akshitnannaware-gmailcoms-projects.vercel.app', // Vercel frontend
+    'https://booknest-m6h0qbduf-akshitnannaware.vercel.app/', // Vercel frontend
     'http://localhost:5173' // Local development
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
