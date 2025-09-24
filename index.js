@@ -75,7 +75,7 @@ const app = express();
 app.use(cors({
   origin: [
     'https://book-nest-hko2e49mx-akshitnannaware-gmailcoms-projects.vercel.app', // Vercel frontend
-    'http://localhost:5173' // Local development
+    // 'http://localhost:5173' // Local development
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
